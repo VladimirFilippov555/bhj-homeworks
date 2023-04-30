@@ -18,7 +18,7 @@ function cookieClicker() {
     };
 
     presentTime = new Date();
-    speed.textContent = ((presentTime - pastTime) / 1000).toFixed(2);
+    speed.textContent = (1000 / (presentTime - pastTime)).toFixed(2);
     pastTime = presentTime;
     return pastTime;
 }

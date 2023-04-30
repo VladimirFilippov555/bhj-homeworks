@@ -4,9 +4,10 @@ const dead = document.getElementById("dead");
 const lost = document.getElementById("lost");
 let deadCount = 0;
 let lostCount = 0;
+let report;
 
-
-function newGame() {
+function newGame(report) {
+  alert(report);
   deadCount = 0;
   lostCount = 0;
   dead.textContent = deadCount;
@@ -27,13 +28,13 @@ function getHole(index) {
       }
 
       if (deadCount === 10) {
-        alert("Победа!");
-        newGame();
+        report = "Победа!";
+        newGame(report);
       }
 
       if (lostCount === 5) {
-        alert("Вы проиграли!");
-        newGame();
+        report = "Вы проиграли!";
+        newGame(report);
       }
     };
   }

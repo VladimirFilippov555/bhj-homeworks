@@ -25,11 +25,11 @@ products.addEventListener('click', (event) => {
         let productImage = product.querySelector('.product__image').getAttribute('src');
         let productCount = product.querySelector('.product__quantity-value').innerText;
               
-        const productsInCartId = Array.from(cart.children).find(i => i.getAttribute('data-id') === productId);
+        const productInCartId = Array.from(cart.children).find(i => i.getAttribute('data-id') === productId);
                 
-        if (productsInCartId) {
-            productCount = Number(productsInCartId.lastElementChild.innerText) + Number(productCount);
-            productsInCartId.lastElementChild.innerText = productCount;
+        if (productInCartId) {
+            productCount = Number(productInCartId.lastElementChild.innerText) + Number(productCount);
+            productInCartId.lastElementChild.innerText = productCount;
         } else {
             cart.insertAdjacentHTML('beforeEnd', 
             `<div class="cart__product" data-id="${productId}">
